@@ -1,9 +1,16 @@
+
+Âhmëd
 pipeline {
     agent any
+    tools {
+        maven 'M2_HOME'
+    }
     stages {
-        stage('Test') {
+        stage('GIT') {
             steps {
-                echo 'Pipeline exécuté depuis Jenkinsfile'
+                git branch: 'main',
+                    url: 'https://github.com/zayen23/dev0p-.git'
+                sh 'mvn clean'
             }
         }
     }
