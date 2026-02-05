@@ -1,5 +1,3 @@
-
-Âhmëd
 pipeline {
     agent any
     tools {
