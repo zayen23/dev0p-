@@ -1,13 +1,19 @@
-pipeline { 
-    agent any tools {
+pipeline {
+    agent any
+
+    tools {
         maven 'M2_HOME'
     }
-          stages {
-              stage('GIT')
-              {
-              steps {
-                  git branch: 'main', url: 'https://github.com/zayen23/dev0p-.git' sh 'mvn clean' 
-              }
-          }
-                 }
-         }
+
+    stages {
+        stage('GIT') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/zayen23/dev0p-.git'
+                
+                sh 'mvn clean'
+            }
+        }
+    }
+}
+
