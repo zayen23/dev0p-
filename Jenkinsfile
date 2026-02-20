@@ -14,7 +14,7 @@ pipeline {
         }
         stage('MVN SONARQUBE') {
             steps {
-                sh 'mvn compile sonar:sonar -Dsonar.token=squ_471a32e7ff00e7b503a02364763ddd6fff206578 -Dsonar.java.binaries=target/classes'            }
+                sh 'mvn compile sonar:sonar -Dsonar.token=squ_471a32e7ff00e7b503a02364763ddd6fff206578 -Dsonar.java.binaries=target/classes -DskipTests'
         }
     }
 }
