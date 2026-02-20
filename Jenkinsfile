@@ -12,9 +12,9 @@ pipeline {
                 sh 'mvn clean'
             }
         }
-       stage('MVN SONARQUBE') {
+             stage('MVN SONARQUBE') {
     steps {
-        sh 'mvn sonar:sonar -Dsonar.token=squ_cc97ba90103265066048661e5bf9226556bc4345'
+        sh 'mvn package sonar:sonar -Dsonar.token=squ_cc97ba90103265066048661e5bf9226556bc4345'
     }
 }
     }
