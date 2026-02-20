@@ -1,10 +1,8 @@
 pipeline {
     agent any
-
     tools {
         maven 'M2_HOME'
     }
-
     stages {
         stage('GIT') {
             steps {
@@ -14,6 +12,10 @@ pipeline {
                 sh 'mvn clean'
             }
         }
+        stage('MVN SONARQUBE') {
+            steps {
+                sh 'mvn sonar:sonar'
+            }
+        }
     }
 }
-
